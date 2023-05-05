@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": ["artist_uuid", "platform_code", "date"],
+  "properties": {
+    "artist_uuid": {
+      "type": "string"
+    },
+    "platform_code": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "likeCount": {
+      "type": ["null", "integer"]
+    },
+    "followerCount": {
+      "type": ["null", "integer"]
+    },
+    "followingCount": {
+      "type": ["null", "integer"]
+    },
+    "postCount": {
+      "type": ["null", "integer"]
+    },
+    "viewCount": {
+      "type": ["null", "integer"]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "identifier",
+    "platformCode",
+    "platformName",
+    "artist_uuid",
+    "url"
+  ],
+  "properties": {
+    "identifier": {
+      "type": "string"
+    },
+    "artist_uuid": {
+      "type": "string"
+    },
+    "platformCode": {
+      "type": "string"
+    },
+    "platformName": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
