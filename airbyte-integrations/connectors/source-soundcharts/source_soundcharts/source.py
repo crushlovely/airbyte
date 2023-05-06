@@ -16,14 +16,14 @@ from airbyte_cdk.sources.streams import Stream
 from airbyte_cdk.sources.streams.http.requests_native_auth import TokenAuthenticator
 
 from source_soundcharts.streams import (
-    LibraryArtists,
+    Artist,
+    ArtistAlbums,
+    ArtistAudience,
+    ArtistIdentifiers,
+    ArtistSongs,
     Platforms,
     PlatformsSocial,
     PlatformsStreaming,
-    ArtistSongs,
-    ArtistAlbums,
-    ArtistIdentifiers,
-    ArtistAudience,
 )
 
 
@@ -65,7 +65,7 @@ class SourceSoundcharts(AbstractSource):
             # Apply config to args passed to all streams
             args.update(config)
 
-            stream = LibraryArtists(**args)
+            stream = Platforms(**args)
             records = stream.read_records(sync_mode=SyncMode.full_refresh)
             next(records)
             return True, None
@@ -84,14 +84,14 @@ class SourceSoundcharts(AbstractSource):
 
         # Apply config to args passed to all streams
         args.update(config)
-
+        platforms_social = PlatformsSocial(**args)
         return [
-            LibraryArtists(**args),
-            Platforms(**args),
-            PlatformsSocial(**args),
-            PlatformsStreaming(**args),
-            ArtistSongs(**args),
+            Artist(**args),
             ArtistAlbums(**args),
+            ArtistAudience(parent=platforms_social, **args),
             ArtistIdentifiers(**args),
-            ArtistAudience(**args),
+            ArtistSongs(**args),
+            Platforms(**args),
+            platforms_social,
+            PlatformsStreaming(**args),
         ]

@@ -183,7 +183,7 @@ You've checked out the repo, implemented a million dollar feature, and you're re
 1. Bump the connector version in `Dockerfile` -- just increment the value of the `LABEL io.airbyte.version` appropriately (we use [SemVer](https://semver.org/)).
 
 ```bash
-TAG=0.1.1
+TAG=0.1.5
 
 # Because we're in a virtual environment, we have to load our bash profile to make gcloud CLI available
 source ~/.bashrc

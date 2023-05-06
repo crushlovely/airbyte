@@ -2,48 +2,6 @@
   "streams": [
     {
       "stream": {
-        "name": "library_artists",
-        "json_schema": {
-          "$schema": "http://json-schema.org/draft-04/schema#",
-          "type": "object",
-          "required": ["platformCode", "identifier", "artist"],
-          "properties": {
-            "platformCode": {
-              "type": "string"
-            },
-            "identifier": {
-              "type": "string"
-            },
-            "artist": {
-              "type": "object",
-              "required": ["uuid", "slug", "name", "appUrl", "imageUrl"],
-              "properties": {
-                "uuid": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "appUrl": {
-                  "type": "string"
-                },
-                "imageUrl": {
-                  "type": ["null", "number"]
-                }
-              }
-            }
-          }
-        },
-        "supported_sync_modes": ["full_refresh"]
-      },
-      "sync_mode": "full_refresh",
-      "destination_sync_mode": "overwrite"
-    },
-    {
-      "stream": {
         "name": "platforms",
         "json_schema": {
           "$schema": "http://json-schema.org/draft-04/schema#",
@@ -97,6 +55,39 @@
             },
             "code": {
               "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+    },
+    {
+      "stream": {
+        "name": "artist",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": ["uuid", "slug", "name"],
+          "properties": {
+            "uuid": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "appUrl": {
+              "type": "string"
+            },
+            "imageUrl": {
+              "type": ["null", "string"]
+            },
+            "countryCode": {
+              "type": ["null", "string"]
             }
           }
         },
