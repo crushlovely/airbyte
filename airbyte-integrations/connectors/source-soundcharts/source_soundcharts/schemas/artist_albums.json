@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": ["uuid", "name", "creditName", "artist_uuid"],
+  "properties": {
+    "uuid": {
+      "type": "string"
+    },
+    "artist_uuid": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "creditName": {
+      "type": "string"
+    }
+  }
+}

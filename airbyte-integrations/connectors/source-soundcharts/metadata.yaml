@@ -1,0 +1,19 @@
+data:
+  allowedHosts:
+    hosts:
+      - "*" # Please change to the hostname of the source.
+  registries:
+    oss:
+      enabled: false
+  connectorSubtype: api
+  connectorType: source
+  definitionId: 75863047-1389-4539-b7c7-86172e2849f6
+  dockerImageTag: 0.1.0
+  dockerRepository: airbyte/source-soundcharts
+  githubIssueLabel: source-soundcharts
+  icon: soundcharts.svg
+  license: MIT
+  name: Soundcharts 
+  releaseStage: alpha
+  supportUrl: https://docs.airbyte.com/integrations/sources/soundcharts
+metadataSpecVersion: "1.0"

@@ -1,0 +1,230 @@
+{
+  "streams": [
+    {
+      "stream": {
+        "name": "platforms",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": ["name", "code"],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+    },
+    {
+      "stream": {
+        "name": "platforms_social",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": ["name", "code"],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+    },
+    {
+      "stream": {
+        "name": "platforms_streaming",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": ["name", "code"],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+    },
+    {
+      "stream": {
+        "name": "artist",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": ["uuid", "slug", "name"],
+          "properties": {
+            "uuid": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "appUrl": {
+              "type": "string"
+            },
+            "imageUrl": {
+              "type": ["null", "string"]
+            },
+            "countryCode": {
+              "type": ["null", "string"]
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+    },
+    {
+      "stream": {
+        "name": "artist_songs",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": ["uuid", "name", "creditName", "artist_uuid"],
+          "properties": {
+            "uuid": {
+              "type": "string"
+            },
+            "artist_uuid": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "creditName": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+    },
+    {
+      "stream": {
+        "name": "artist_albums",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": ["uuid", "name", "creditName", "artist_uuid"],
+          "properties": {
+            "uuid": {
+              "type": "string"
+            },
+            "artist_uuid": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "creditName": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+    },
+    {
+      "stream": {
+        "name": "artist_identifiers",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": [
+            "identifier",
+            "platformCode",
+            "platformName",
+            "artist_uuid",
+            "url"
+          ],
+          "properties": {
+            "identifier": {
+              "type": "string"
+            },
+            "artist_uuid": {
+              "type": "string"
+            },
+            "platformCode": {
+              "type": "string"
+            },
+            "platformName": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "full_refresh",
+      "destination_sync_mode": "overwrite"
+    },
+    {
+      "stream": {
+        "name": "artist_audience",
+        "json_schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "required": ["artist_uuid", "platform_code", "date"],
+          "properties": {
+            "artist_uuid": {
+              "type": "string"
+            },
+            "platform_code": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "likeCount": {
+              "type": ["null", "integer"]
+            },
+            "followerCount": {
+              "type": ["null", "integer"]
+            },
+            "followingCount": {
+              "type": ["null", "integer"]
+            },
+            "postCount": {
+              "type": ["null", "integer"]
+            },
+            "viewCount": {
+              "type": ["null", "integer"]
+            }
+          }
+        },
+        "supported_sync_modes": ["full_refresh"]
+      },
+      "sync_mode": "incremental",
+      "destination_sync_mode": "append"
+    }
+  ]
+}
